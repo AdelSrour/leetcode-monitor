@@ -1,0 +1,241 @@
+/* viewtitle */
+.viewTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  color: #d8d3cb75;
+  margin-bottom: 30px;
+  background-color: #8577751f;
+  border-radius: 10px;
+}
+
+.viewTitle-text {
+  font-size: 1rem;
+  background-color: #8577751f;
+  user-select: none;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Main userview card */
+.userView {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  animation: cardEffect 0.5s ease forwards;
+  display: flex;
+  height: 100%;
+}
+
+.userView>div{
+  width: 100%;
+}
+
+.content-placeholder {
+  display: block;
+  width: 100%;
+}
+
+.content-placeholder-loader {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  height: 25px;
+  background: linear-gradient(90deg, #0001 33%, #0005 50%, #0001 66%) #313030;
+  background-size: 300% 100%;
+  animation: placeContent 1s infinite linear;
+}
+
+
+@keyframes placeContent {
+  0% {
+    background-position: right;
+  }
+}
+
+
+@keyframes cardEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* userInfo flex-start */
+.userInfo {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  text-align: start;
+  border-radius: 10px 10px 0 0;
+  font-size: 1rem;
+}
+
+.userImg img {
+  user-select: none;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.userDisplay {
+  width: 100%;
+  font-size: 0.75em;
+}
+
+.userName {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 5px 5px 0 0;
+  background-color: #383838;
+  text-transform: capitalize;
+}
+
+.userID {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 0 0 5px 5px;
+  background-color: #383838;
+  transition: all 0.4s ease;
+}
+
+.userID:hover {
+  background-color: #5c5c5ca2;
+}
+
+.userRanking {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background-color: #3838388e;
+  transition: all 0.4s ease;
+}
+
+/* end of userInfo */
+
+
+/* Months flex-end */
+.monthInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  height: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.monthTitle {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 2px 10px;
+  margin-bottom: 10px;
+  background-color: #8577755e;
+  border-radius: 10px;
+}
+
+.monthsGrid {
+  display: grid;
+  grid-template-rows: repeat(7, 14px);
+  grid-auto-flow: column;
+  grid-gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  width: 14px;
+  height: 14px;
+  color: #ffffff1c;
+  background-color: #383838;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.activeDay {
+  color: #00000069;
+  background-color: #198754;
+}
+
+.missedDays {
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 5px;
+  background-color: #3d2c2c75;
+}
+
+.missedDays.noned {
+  background-color: #2d3d2c75 !important;
+}
+
+/* End of Months */
+
+
+.track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ontrack-actions {
+  font-size: 0.95rem;
+}
+
+.track-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.ontrack-actions span {
+  user-select: none;
+}
+
+
+@media (min-width: 992px) {
+  .userInfo {
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.cpointer {
+  cursor: pointer;
+}
+
+.form-control {
+  font-size: 0.9rem !important;
+  color: #fff !important;
+}
+
+.form-control::placeholder {
+  color: #6b6a6a !important;
+}
+
+.usernameDisplay {
+  width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

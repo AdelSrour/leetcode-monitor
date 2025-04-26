@@ -1,0 +1,38 @@
+CREATE DATABASE  IF NOT EXISTS `lcmtr`;
+
+use `lcmtr`;
+
+CREATE TABLE `usersList` (
+  `userID` bigint NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `email` varchar(320) DEFAULT NULL,
+  `password` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`userID`),
+  UNIQUE KEY `username_UNIQUE` (`username`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `usersSessions` (
+  `sessionID` varchar(256) NOT NULL,
+  `userID` bigint NOT NULL,
+  `ipAddress` varchar(256) NOT NULL,
+  `userAgent` longtext NOT NULL,
+  `creationDate` datetime NOT NULL,
+  `expireDate` datetime NOT NULL,
+  PRIMARY KEY (`sessionID`),
+  KEY `fk_usersSessions_1_idx` (`userID`),
+  CONSTRAINT `fk_usersSessions_1` FOREIGN KEY (`userID`) REFERENCES `usersList` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE `viewsList` (
+  `viewID` bigint NOT NULL AUTO_INCREMENT,
+  `userID` bigint NOT NULL,
+  `viewName` mediumtext NOT NULL,
+  `usersList` longtext NOT NULL,
+  `lastUpdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`viewID`),
+  KEY `userView_idx` (`viewID`,`userID`),
+  KEY `userView_idx1` (`userID`),
+  CONSTRAINT `userView` FOREIGN KEY (`userID`) REFERENCES `usersList` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+

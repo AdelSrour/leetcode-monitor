@@ -1,0 +1,37 @@
+.section {
+    font-size: 1rem;
+    display: flex;
+    padding: 100px 0;
+    justify-content: center;
+}
+
+.section-card {
+    width: 90%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    animation: cardEffect 0.5s ease forwards;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.section .section-body label {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: var(--selected-bg3);
+}
+
+.section .section-body input {
+    width: 100% !important;
+}
+
+@media (min-width: 992px) {
+    .section-card {
+        width: 70%;
+    }
+}
