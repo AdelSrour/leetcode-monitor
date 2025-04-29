@@ -34,7 +34,7 @@ class Profile
 
         #Set number of months to generate
         $currentDate = time();
-        $months = array_reverse(array_combine(array_map(fn($i) => date("F", strtotime("-$i month")), range(0, $numMonths - 1)), array_fill(0, $numMonths, [])));
+        $months = array_reverse(array_combine(array_map(fn($i) => date("F", strtotime("first day of -$i month")), range(0, $numMonths - 1)), array_fill(0, $numMonths, [])));
 
         #Load active days into our months array
         $currYear = date("Y", $currentDate);
